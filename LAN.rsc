@@ -15,11 +15,14 @@
 	"198.51.100.0/24";
 	"203.0.113.0/24";
 	"224.0.0.0/4";
-	"240.0.0.0/4"
+	"240.0.0.0/4";
+	"192.168.5.0/24";
+	"192.168.1.0/24"
 }
 
 :foreach ip in=$lanIps do={
 	:do {
-		/ip firewall address-list add list=LAN address=$ip
+		/ip firewall address-list add list=CN address=$ip
 	} on-error={}
 }
+
